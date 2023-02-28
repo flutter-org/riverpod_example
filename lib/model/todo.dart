@@ -23,4 +23,18 @@ class Todo {
       completed: completed ?? this.completed,
     );
   }
+
+  factory Todo.fromJson(Map<String, dynamic> map) {
+    return Todo(
+      id: map['id'] as String,
+      description: map['description'] as String,
+      completed: map['completed'] as bool,
+    );
+  }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'description': description,
+        'completed': completed,
+      };
 }

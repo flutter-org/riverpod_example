@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/provider/riverpod.dart';
+import 'package:riverpod_example/widgets/async_todo_list_view.dart';
 import 'package:riverpod_example/widgets/todo_list_view.dart';
 
 class ProviderPage extends StatelessWidget {
@@ -13,8 +14,7 @@ class ProviderPage extends StatelessWidget {
         title: const Text('Provider Demo'),
         actions: [
           IconButton(
-            onPressed: () {
-            },
+            onPressed: () {},
             icon: const Icon(Icons.add),
           ),
         ],
@@ -24,7 +24,7 @@ class ProviderPage extends StatelessWidget {
           final completedTodos = ref.watch(completedTodosProvider);
 
           /// TODO show the todos using a ListView/GridView/...
-          return const TodoListView();
+          return const AsyncTodoListView();
         },
       ),
     );
