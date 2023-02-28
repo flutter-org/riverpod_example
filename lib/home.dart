@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 /// 我们创建了一个 "provider", 这里它存储了一个值 (这里是 "Hello world")。
 /// 通过使用provider，我们能够重写或模拟这个暴露的值
@@ -15,7 +16,15 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
       body: Center(
-        child: Text(value),
+        child: Column(
+          children: [
+            Text(value),
+            ElevatedButton(
+              onPressed: () => context.push('/provider'),
+              child: const Text('Provider Demo'),
+            ),
+          ],
+        ),
       ),
     );
   }

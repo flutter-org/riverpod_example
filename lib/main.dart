@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_example/Provider/provider.dart';
 import 'package:riverpod_example/home.dart';
 
 final _router = GoRouter(
@@ -8,6 +9,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      path: '/provider',
+      builder: (context, state) => const ProviderPage(),
     ),
   ],
 );
