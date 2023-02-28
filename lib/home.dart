@@ -23,6 +23,14 @@ class HomePage extends ConsumerWidget {
               onPressed: () => context.push('/provider'),
               child: const Text('Provider Demo'),
             ),
+            ElevatedButton(
+              onPressed: () => context.push('/async'),
+              child: const Text('AsyncNotifierProvider Demo'),
+            ),
+            ElevatedButton(
+              onPressed: () => context.push('/state'),
+              child: const Text('StateNotifierProvider Demo'),
+            ),
           ],
         ),
       ),

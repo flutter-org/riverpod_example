@@ -8,7 +8,7 @@ import 'package:riverpod_example/model/todo.dart';
 /// 这个类上的公共方法将允许UI修改它的状态。
 final http = Http();
 
-class AsyncTodosNotifier extends AsyncNotifier<List<Todo>> {
+class TodosAsyncNotifier extends AsyncNotifier<List<Todo>> {
   Future<List<Todo>> _fetchTodo() async {
     final json = await http.get('api/todos');
     final decode = jsonDecode(json);

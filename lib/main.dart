@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_example/widgets/provider_page.dart';
+import 'package:riverpod_example/widgets/pages/async_provider_page.dart';
+import 'package:riverpod_example/widgets/pages/provider_page.dart';
 import 'package:riverpod_example/home.dart';
+import 'package:riverpod_example/widgets/pages/state_provider_page.dart';
 
 final _router = GoRouter(
   routes: [
@@ -13,6 +15,14 @@ final _router = GoRouter(
     GoRoute(
       path: '/provider',
       builder: (context, state) => const ProviderPage(),
+    ),
+    GoRoute(
+      path: '/async',
+      builder: (context, state) => const AsyncProviderPage(),
+    ),
+    GoRoute(
+      path: '/state',
+      builder: (context, state) => const StateProviderPage(),
     ),
   ],
 );

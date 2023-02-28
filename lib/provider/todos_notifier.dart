@@ -8,7 +8,11 @@ class TodosNotifier extends Notifier<List<Todo>> {
   /// 我们将待办清单的列表初始化
   @override
   List<Todo> build() {
-    return [];
+    return [
+      const Todo(id: '1', description: 'notifier1', completed: false),
+      const Todo(id: '2', description: 'notifier2', completed: false),
+      const Todo(id: '3', description: 'notifier3', completed: true),
+    ];
   }
 
   /// 让我们添加UI添加待办清单

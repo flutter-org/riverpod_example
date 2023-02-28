@@ -1,8 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/Provider/todos_notifier.dart';
 import 'package:riverpod_example/model/todo.dart';
-import 'package:riverpod_example/provider/async_todos_notifier.dart';
+import 'package:riverpod_example/provider/todos_async_notifier.dart';
+import 'package:riverpod_example/provider/todos_state_notifier.dart';
 
+/// NotifierProvider
 final todosProvider = NotifierProvider<TodosNotifier, List<Todo>>(() {
   return TodosNotifier();
 });
@@ -15,7 +17,12 @@ final completedTodosProvider = Provider<List<Todo>>((ref) {
   return todos.where((todo) => todo.completed).toList();
 });
 
-/// 最后，我们使用NotifierProvider来允许UI与我们的TodosNotifier类交互。
-final asyncTodosProvider = AsyncNotifierProvider<AsyncTodosNotifier, List<Todo>>(() {
-  return AsyncTodosNotifier();
+/// AsyncNotifierProvider
+final asyncTodosProvider = AsyncNotifierProvider<TodosAsyncNotifier, List<Todo>>(() {
+  return TodosAsyncNotifier();
+});
+
+/// StateNotifierProvider
+final stateTodosProvider = StateNotifierProvider<TodosStateNotifier, List<Todo>>((ref) {
+  return TodosStateNotifier();
 });
