@@ -1,0 +1,4 @@
+enum ProductSortType {
+  name,
+  price,
+}

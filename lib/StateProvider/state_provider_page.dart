@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_example/provider/riverpod.dart';
-
-enum ProductSortType {
-  name,
-  price,
-}
+import 'package:riverpod_example/StateProvider/product_sort_type.dart';
+import 'package:riverpod_example/StateProvider/state_provider.dart';
 
 class StateProviderPage extends ConsumerWidget {
   const StateProviderPage({Key? key}) : super(key: key);
