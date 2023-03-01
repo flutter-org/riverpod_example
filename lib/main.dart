@@ -7,6 +7,7 @@ import 'package:riverpod_example/Provider/provider_page.dart';
 import 'package:riverpod_example/home.dart';
 import 'package:riverpod_example/StateNotifierProvider/state_notifier_provider_page.dart';
 import 'package:riverpod_example/StateProvider/state_provider_page.dart';
+import 'package:riverpod_example/provider_observer.dart';
 
 final _router = GoRouter(
   routes: [
@@ -42,8 +43,11 @@ void main() {
     // 为了让widget能够读取到provider，我们需要在整个应用外面套上一个
     // 名为 "ProviderScope"的widget。
     // 我们的这些provider会在这里保存。
-    const ProviderScope(
-      child: MyApp(),
+    ProviderScope(
+      observers: [
+        Logger(),
+      ],
+      child: const MyApp(),
     ),
   );
 }
