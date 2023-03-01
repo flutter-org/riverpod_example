@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_example/widgets/pages/async_provider_page.dart';
+import 'package:riverpod_example/widgets/pages/async_notifier_provider_page.dart';
 import 'package:riverpod_example/widgets/pages/provider_page.dart';
 import 'package:riverpod_example/home.dart';
 import 'package:riverpod_example/widgets/pages/state_notifier_provider_page.dart';
@@ -19,7 +19,7 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/async',
-      builder: (context, state) => const AsyncProviderPage(),
+      builder: (context, state) => const AsyncNotifierProviderPage(),
     ),
     GoRoute(
       path: '/state_notifier',
