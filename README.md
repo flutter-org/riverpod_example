@@ -465,7 +465,7 @@ final userProvider = StreamProvider<User>(...);
 不同的provider可能提供用法。
 要了解更多信息，请阅读[API 参考](https://pub.dev/documentation/riverpod/latest/riverpod/riverpod-library.html)来获取每个provider的文档。
 
-## 使用“select”来过滤重建内容
+## 2.4 使用“select”来过滤重建内容
 
 与读取provider相关的最后一个特性是能够减少widget/provider从 `ref.watch` 重新构建的次数， 或者减少 `ref.listen` 执行函数的频率。
 
