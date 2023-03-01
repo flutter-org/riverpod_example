@@ -1,9 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/model/todo.dart';
 
-/// Notifier类将会被传递给我们的NotifierProvider。
-/// 这个类不应该在其“state”属性之外暴露状态，也就是说没有公共的获取属性的方法！
-/// 这个类上的公共方法将允许UI修改它的状态。
 class TodosNotifier extends Notifier<List<Todo>> {
   /// 我们将待办清单的列表初始化
   @override
