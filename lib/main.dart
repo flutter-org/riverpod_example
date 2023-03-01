@@ -5,6 +5,7 @@ import 'package:riverpod_example/widgets/pages/async_provider_page.dart';
 import 'package:riverpod_example/widgets/pages/provider_page.dart';
 import 'package:riverpod_example/home.dart';
 import 'package:riverpod_example/widgets/pages/state_notifier_provider_page.dart';
+import 'package:riverpod_example/widgets/pages/state_provider_page.dart';
 
 final _router = GoRouter(
   routes: [
@@ -21,8 +22,12 @@ final _router = GoRouter(
       builder: (context, state) => const AsyncProviderPage(),
     ),
     GoRoute(
-      path: '/state',
+      path: '/state_notifier',
       builder: (context, state) => const StateNotifierProviderPage(),
+    ),
+    GoRoute(
+      path: '/state',
+      builder: (context, state) => const StateProviderPage(),
     ),
   ],
 );
