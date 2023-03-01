@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_example/widgets/pages/async_provider_page.dart';
 import 'package:riverpod_example/widgets/pages/provider_page.dart';
 import 'package:riverpod_example/home.dart';
-import 'package:riverpod_example/widgets/pages/state_provider_page.dart';
+import 'package:riverpod_example/widgets/pages/state_notifier_provider_page.dart';
 
 final _router = GoRouter(
   routes: [
@@ -22,7 +22,7 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/state',
-      builder: (context, state) => const StateProviderPage(),
+      builder: (context, state) => const StateNotifierProviderPage(),
     ),
   ],
 );
