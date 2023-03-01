@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/Provider/todos_notifier.dart';
 import 'package:riverpod_example/model/todo.dart';
-import 'package:riverpod_example/provider/todos_async_notifier.dart';
+import 'package:riverpod_example/AsyncNotifierProvider/todos_async_notifier.dart';
 
 /// NotifierProvider
 final todosProvider = NotifierProvider<TodosNotifier, List<Todo>>(() {
@@ -16,7 +16,3 @@ final completedTodosProvider = Provider<List<Todo>>((ref) {
   return todos.where((todo) => todo.completed).toList();
 });
 
-/// AsyncNotifierProvider
-final asyncTodosProvider = AsyncNotifierProvider<TodosAsyncNotifier, List<Todo>>(() {
-  return TodosAsyncNotifier();
-});

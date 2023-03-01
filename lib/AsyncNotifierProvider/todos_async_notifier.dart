@@ -1,12 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_example/model/http.dart';
+import 'package:riverpod_example/AsyncNotifierProvider/async_notifier_provider.dart';
 import 'package:riverpod_example/model/todo.dart';
-
-/// Notifier类将会被传递给我们的NotifierProvider。
-/// 这个类不应该在其“state”属性之外暴露状态，也就是说没有公共的获取属性的方法！
-/// 这个类上的公共方法将允许UI修改它的状态。
-final http = Http();
 
 class TodosAsyncNotifier extends AsyncNotifier<List<Todo>> {
   Future<List<Todo>> _fetchTodo() async {
