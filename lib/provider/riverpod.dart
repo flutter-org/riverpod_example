@@ -1,10 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/Provider/todos_notifier.dart';
-import 'package:riverpod_example/StateProvider/product.dart';
 import 'package:riverpod_example/model/todo.dart';
 import 'package:riverpod_example/provider/todos_async_notifier.dart';
-import 'package:riverpod_example/provider/todos_state_notifier.dart';
-import 'package:riverpod_example/StateProvider/state_provider_page.dart';
 
 /// NotifierProvider
 final todosProvider = NotifierProvider<TodosNotifier, List<Todo>>(() {
@@ -23,9 +20,3 @@ final completedTodosProvider = Provider<List<Todo>>((ref) {
 final asyncTodosProvider = AsyncNotifierProvider<TodosAsyncNotifier, List<Todo>>(() {
   return TodosAsyncNotifier();
 });
-
-/// StateNotifierProvider
-final stateTodosProvider = StateNotifierProvider<TodosStateNotifier, List<Todo>>((ref) {
-  return TodosStateNotifier();
-});
-
