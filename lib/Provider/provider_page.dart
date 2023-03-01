@@ -16,7 +16,12 @@ class ProviderPage extends StatelessWidget {
           final completedTodos = ref.watch(completedTodosProvider);
 
           /// TODO show the todos using a ListView/GridView/...
-          return ListView();
+          return ListView(
+            children: [
+              for(final todo in completedTodos)
+                Text(todo.description)
+            ],
+          );
         },
       ),
     );
