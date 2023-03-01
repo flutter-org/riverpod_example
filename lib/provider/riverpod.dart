@@ -54,3 +54,5 @@ final productsProvider = Provider<List<Product>>((ref) {
 final productSortTypeProvider = StateProvider<ProductSortType>(
   (ref) => ProductSortType.name,
 );
+
+final counterProvider = StateProvider<int>((ref) => 0);

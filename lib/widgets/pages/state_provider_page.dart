@@ -34,14 +34,28 @@ class StateProviderPage extends ConsumerWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          final product = products[index];
-          return ListTile(
-            title: Text(product.name),
-            subtitle: Text('${product.price} \$'),
-          );
+      body: Column(
+        children: [
+          Text('counter:${ref.watch(counterProvider)}'),
+          Expanded(
+            child: ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (context, index) {
+                final product = products[index];
+                return ListTile(
+                  title: Text(product.name),
+                  subtitle: Text('${product.price} \$'),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          /// update
+          ref.read(counterProvider.notifier).update((state) => state + 1);
         },
       ),
     );
